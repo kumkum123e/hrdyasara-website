@@ -1,4 +1,7 @@
 
+"use client";
+
+import { useSyncExternalStore } from "react";
 import { MapPin, Phone } from "lucide-react";
 
 import {
@@ -8,23 +11,46 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-export default function TopInfoBar() {
-  const today = new Date();
-
-  const date = new Intl.DateTimeFormat("en-IN", {
+const dateFormatters = {
+  day: new Intl.DateTimeFormat("en-IN", {
     day: "2-digit",
     timeZone: "Asia/Kolkata",
-  }).format(today);
-
-  const month = new Intl.DateTimeFormat("en-IN", {
+  }),
+  month: new Intl.DateTimeFormat("en-IN", {
     month: "short",
     timeZone: "Asia/Kolkata",
-  }).format(today);
-
-  const year = new Intl.DateTimeFormat("en-IN", {
+  }),
+  year: new Intl.DateTimeFormat("en-IN", {
     year: "numeric",
     timeZone: "Asia/Kolkata",
-  }).format(today);
+  }),
+};
+
+function subscribeToDateChanges(onStoreChange: () => void) {
+  const interval = window.setInterval(onStoreChange, 60_000);
+  return () => window.clearInterval(interval);
+}
+
+function getDateSnapshot() {
+  const today = new Date();
+
+  return [
+    dateFormatters.day.format(today),
+    dateFormatters.month.format(today),
+    dateFormatters.year.format(today),
+  ].join("|");
+}
+
+function getServerDateSnapshot() {
+  return "||";
+}
+
+export default function TopInfoBar() {
+  const [date, month, year] = useSyncExternalStore(
+    subscribeToDateChanges,
+    getDateSnapshot,
+    getServerDateSnapshot
+  ).split("|");
 
   const socialLinks = [
     {
@@ -50,7 +76,7 @@ export default function TopInfoBar() {
   ];
 
   return (
-    <div className="hidden h-[36px] bg-[#242428] text-white lg:block">
+    <div className="hidden h-[40px] bg-[#242428] text-white lg:block">
       <div className="mx-auto flex h-full max-w-[1800px] items-center justify-between gap-5 px-6 xl:px-10">
 
         {/* Date */}

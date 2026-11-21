@@ -13,7 +13,7 @@ export default function ObjectivesDecorations() {
 
       {/* Top wave */}
       <svg
-        className="absolute right-0 top-0 w-[400px] max-w-[60%]"
+        className="decorative-wave-cross absolute right-0 top-0 w-[400px] max-w-[60%]"
         viewBox="0 0 400 100"
         fill="none"
       >
@@ -33,7 +33,7 @@ export default function ObjectivesDecorations() {
 
       {/* Bottom wave */}
       <svg
-        className="absolute bottom-0 left-0 w-[500px] max-w-[70%]"
+        className="decorative-wave-cross absolute bottom-0 left-0 w-[500px] max-w-[70%]"
         viewBox="0 0 500 120"
         fill="none"
       >

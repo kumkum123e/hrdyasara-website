@@ -167,7 +167,7 @@ export default function OurProjects() {
           <div
             aria-roledescription="carousel"
             aria-label="HrdyaSara foundation projects"
-            className="relative h-[410px] overflow-hidden rounded-[26px] shadow-[0_16px_45px_rgba(70,30,30,0.13)] sm:h-[430px] lg:h-[450px]"
+            className="relative h-[470px] overflow-hidden rounded-[26px] shadow-[0_16px_45px_rgba(70,30,30,0.13)] sm:h-[490px] lg:h-[520px] 2xl:h-[540px]"
           >
             {data.projects.map((project, index) => (
               <ProjectSlide

@@ -64,7 +64,7 @@ export default function HeroDecorations() {
       </svg>
 
       <svg
-        className="hero-curve-drift absolute -right-12 top-[4%] w-[290px] opacity-60"
+        className="decorative-wave-cross hero-curve-drift absolute -right-12 top-[4%] w-[290px] opacity-60"
         viewBox="0 0 320 120"
         fill="none"
       >
@@ -81,7 +81,7 @@ export default function HeroDecorations() {
       </svg>
 
       <svg
-        className="hero-curve-drift absolute -left-20 bottom-[3%] w-[300px] opacity-60"
+        className="decorative-wave-cross hero-curve-drift absolute -left-20 bottom-[3%] w-[300px] opacity-60"
         viewBox="0 0 320 130"
         fill="none"
       >

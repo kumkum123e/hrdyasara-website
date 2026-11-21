@@ -7,7 +7,9 @@ import OurApproach from "@/components/home/OurApproach";
 import OurProjects from "@/components/home/OurProjects";
 import OurInitiatives from "@/components/home/OurInitiatives";
 import OurPartners from "@/components/home/OurPartners";
-
+import GallerySection from "@/components/home/GallerySection";
+import CommunityImpact from "@/components/home/CommunityImpact";
+import MissionBanner from "@/components/home/MissionBanner";
 export default function HomePage() {
   return (
     <main>
@@ -19,6 +21,9 @@ export default function HomePage() {
       <OurProjects />
       <OurInitiatives />
       <OurPartners />
+      <GallerySection />
+      <CommunityImpact />
+      <MissionBanner />
     </main>
   );
 }

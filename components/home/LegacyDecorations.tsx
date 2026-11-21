@@ -32,7 +32,7 @@ export default function LegacyDecorations() {
 
       {/* Curved top line */}
       <svg
-        className="absolute left-0 top-0 w-[320px] opacity-60"
+        className="decorative-wave-cross absolute left-0 top-0 w-[320px] opacity-60"
         viewBox="0 0 320 120"
         fill="none"
       >
@@ -45,7 +45,7 @@ export default function LegacyDecorations() {
 
       {/* Bottom curved line */}
       <svg
-        className="absolute bottom-8 left-0 w-full opacity-50"
+        className="decorative-wave-cross absolute bottom-8 left-0 w-full opacity-50"
         viewBox="0 0 1440 100"
         preserveAspectRatio="none"
         fill="none"

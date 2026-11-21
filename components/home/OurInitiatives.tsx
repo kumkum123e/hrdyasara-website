@@ -17,7 +17,7 @@ export default function OurInitiatives() {
     <section
       id="our-initiatives"
       aria-labelledby="our-initiatives-heading"
-      className="relative isolate overflow-hidden bg-[#FFFAF7] py-14 sm:py-16 lg:py-20"
+      className="relative isolate overflow-hidden bg-[#ffffff] py-14 sm:py-16 lg:py-20"
     >
       {/* Soft background gradients */}
       <div
@@ -33,7 +33,7 @@ export default function OurInitiatives() {
       {/* Decorative corner wave */}
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 w-[200px] opacity-40 sm:w-[280px]"
+        className="decorative-wave-cross pointer-events-none absolute left-0 top-0 w-[200px] opacity-40 sm:w-[280px]"
         viewBox="0 0 300 170"
         fill="none"
       >

@@ -60,7 +60,7 @@ export default function ProjectSlide({
             fill
             priority={priority}
             sizes="(max-width: 1440px) 100vw, 1350px"
-            className="object-cover"
+            className="object-cover lg:object-[50%_38%]"
             onError={() => setImageError(true)}
           />
         )}
@@ -69,7 +69,7 @@ export default function ProjectSlide({
       {/* Red-orange cinematic overlay */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-[#611F2B]/90 via-[#7A332F]/60 to-[#241416]/35"
+        className="absolute inset-0 bg-gradient-to-t from-[#611F2B]/90 via-[#7A332F]/55 to-[#241416]/35 lg:bg-gradient-to-r lg:from-[#4E1E29]/95 lg:via-[#782F33]/65 lg:to-transparent"
       />
 
       {/* Soft orange glow */}
@@ -79,26 +79,19 @@ export default function ProjectSlide({
       />
 
       {/* Center content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-12 py-12 text-center text-white sm:px-16">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 py-12 text-center text-white sm:px-16 lg:items-start lg:px-[8%] lg:text-left">
         <div
           key={`${project.id}-${active}`}
           className={
             active
-              ? "project-content-reveal flex flex-col items-center"
-              : "flex flex-col items-center"
+              ? "project-content-reveal flex max-w-[580px] flex-col items-center lg:items-start"
+              : "flex max-w-[580px] flex-col items-center lg:items-start"
           }
         >
-          {/* Icon */}
-          <div className="mb-5 flex h-[76px] w-[76px] items-center justify-center rounded-full border border-white/50 bg-white shadow-lg">
-            <Icon
-              size={36}
-              strokeWidth={1.7}
-              className="text-[#D23C4D]"
-            />
-          </div>
+          
 
           {/* Title */}
-          <h3 className="max-w-[720px] font-serif text-[clamp(1.7rem,3.3vw,3rem)] font-bold leading-tight">
+          <h3 className="max-w-[720px] font-serif text-[clamp(1.7rem,3.3vw,3rem)] font-bold leading-tight lg:max-w-[580px]">
             {project.title}
           </h3>
 

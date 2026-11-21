@@ -79,6 +79,26 @@ body {
   }
 }
 
+@keyframes decorativeWaveCross {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) skewX(0deg);
+  }
+  25% {
+    transform: translate3d(-8px, 3px, 0) skewX(-1deg);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0) skewX(1deg);
+  }
+  75% {
+    transform: translate3d(8px, 3px, 0) skewX(-1deg);
+  }
+}
+
+.decorative-wave-cross {
+  transform-origin: center;
+  animation: decorativeWaveCross 9s ease-in-out infinite;
+}
+
 .hero-fade-up {
   animation: heroFadeUp 0.9s ease-out both;
 }
@@ -114,7 +134,8 @@ body {
   .hero-float-reverse,
   .hero-decoration-pulse,
   .hero-curve-drift,
-  .hero-wave-drift {
+  .hero-wave-drift,
+  .decorative-wave-cross {
     animation: none;
   }
 }
@@ -249,6 +270,50 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .project-content-reveal {
     animation: none;
+  }
+}
+
+/* Community Impact Section */
+
+.impact-card {
+  will-change: transform, opacity;
+}
+
+/* Hover lift without overriding Motion transforms */
+@media (hover: hover) and (pointer: fine) {
+  .impact-card:hover > div {
+    transform: translateY(-8px);
+  }
+
+  .impact-card > div {
+    transition:
+      transform 300ms ease,
+      box-shadow 300ms ease,
+      border-color 300ms ease;
+  }
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  .impact-card {
+    will-change: auto;
+  }
+
+  .impact-card > div {
+    transition: none;
+  }
+}
+.community-impact-card {
+  --card-entry-x: 0px;
+}
+
+@media (min-width: 768px) {
+  .community-impact-card-0 {
+    --card-entry-x: -100px;
+  }
+
+  .community-impact-card-1 {
+    --card-entry-x: 100px;
   }
 }
 
